@@ -26,4 +26,4 @@ Requires Visual Studio (.NET desktop development) and SQL Server Express.
 Learning project, not production code. Connection strings use Windows authentication, no credentials are stored.
 
 ## Author
-Yusuf Yahya Değirmenci — [GitHub](https://github.com/23380101076)
+Yusuf Yahya Değirmenci — [GitHub](https://github.com/yusufydegirmenci)
