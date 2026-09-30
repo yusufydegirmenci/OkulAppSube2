@@ -49,23 +49,23 @@ namespace OkulAppSube2
             SqlCommand cmd = null;
             try
             {
-                using (cn = new SqlConnection(@"Data Source=.\DESKTOP-RDAQ55L;Initial Catalog=OkulDbSube2;Integrated Security=true;
+                using (cn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=OkulDbSube2;Integrated Security=true;
                    TrustServerCertificate=true"))
                 {
                     using (cmd = new SqlCommand($"Insert into tblogrenciler values(@Ad,@Soyad,@Numara)", cn))
                     {
                         SqlParameter[] p =
                         {
-                         new SqlParameter("@Ad",txt.Ad.Text.Trim()),
-                         new SqlParameter("@Soyad", txt.Soyad.Text.Trim()),
-                         new SqlParameter("@Numara", txt.Numara.Text.Trim()),
+                         new SqlParameter("@Ad",txtAd.Text.Trim()),
+                         new SqlParameter("@Soyad", txtSoyad.Text.Trim()),
+                         new SqlParameter("@Numara", txtNumara.Text.Trim()),
                         };
                         cmd.Parameters.AddRange(p);
                         if (cn != null && cn.State != ConnectionState.Open)
                         {
                             cn.Open();
                         }
-                        int sonuc = cmd.ExecuteNonQuerry();
+                        int sonuc = cmd.ExecuteNonQuery();
                         MessageBox.Show(sonuc > 0 ? "Ekleme Başaralı" : "Ekleme Başarısız...");
                     }
                 }   
@@ -84,6 +84,7 @@ namespace OkulAppSube2
             //        cn.Dispose();
             //    }
             //}
+        }
 
          private void txt_TextChanged(object sender, EventArgs e)
          {
@@ -97,7 +98,6 @@ namespace OkulAppSube2
                 }
 
          }
-        }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {

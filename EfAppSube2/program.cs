@@ -49,7 +49,10 @@ namespace EfAppSube2
             using (var ctx = new OkulDbContext())
             {
                 var ogr = ctx.Ogrenciler.Find(2);
-                ctx.Ogrenciler.Remove(ogr);
+                if (ogr != null)
+                {
+                    ctx.Ogrenciler.Remove(ogr);
+                }
                 ctx.SaveChanges();
             }
         }

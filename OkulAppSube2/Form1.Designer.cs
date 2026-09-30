@@ -57,6 +57,9 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Öğrenci Kayıt";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.txtAd.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            this.txtSoyad.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            this.txtNumara.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
             // lblNumara
             // 
@@ -122,7 +125,8 @@
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(100, 28);
             this.btnGiris.TabIndex = 1;
-            this.btnGiris.Text = "Giriş";
+            this.btnGiris.Click += new System.EventHandler(this.btnKaydet_Click);
+            this.btnGiris.Text = "Kaydet";
             this.btnGiris.UseVisualStyleBackColor = true;
             // 
             // Form1

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EfAppSube2
 {
@@ -15,15 +10,15 @@ namespace EfAppSube2
         [Column(TypeName = "varchar")]
         [MaxLength(20)]
         [Required]
-        public int Ad { get; set; }
+        public string Ad { get; set; } = string.Empty;
 
-        public int Soyad { get; set; }
+        public string Soyad { get; set; } = string.Empty;
 
-        public int Numara { get; set;}
+        public string Numara { get; set; } = string.Empty;
 
         public override string ToString()
         {
-            return $" {this.Ad}-{this.Numara}-{this.Soyad}";
+            return $" {Ad}-{Numara}-{Soyad}";
         }
     }
 }
