@@ -14,6 +14,18 @@ EfAppSube2/     console app (EF Core 8, Code First)
 Database.sql    creates OkulDbSube2 and the tblogrenciler table
 ```
 
+## Technology and architecture
+
+| | OkulAppSube2 (Windows Forms) | EfAppSube2 (console) |
+|---|---|---|
+| Language and runtime | C# on **.NET Framework 4.7.2** | C# on **.NET 8** |
+| Data access | **ADO.NET**: `SqlConnection`, `SqlCommand`, parameterized queries | **Entity Framework Core 8** (`Microsoft.EntityFrameworkCore.SqlServer` 8.0.11), Code First |
+| Database | **SQL Server Express**, database `OkulDbSube2`, table `tblogrenciler` (`Database.sql` creates both) | SQL Server, configured in `OkulDbContext` |
+| Connection | `Data Source=.\SQLEXPRESS`, Windows authentication, no stored credentials | Same instance and authentication |
+| Purpose | Shows hand-written SQL: open the connection, run a parameterized command, close | Shows add, update, select and delete through a `DbContext`, with commented examples in `program.cs` |
+
+The two projects solve the same problem (saving a student record) so the two data-access styles can be compared side by side.
+
 ## Setup
 Requires Visual Studio (.NET desktop development) and SQL Server Express.
 
